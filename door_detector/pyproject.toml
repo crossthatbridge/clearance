@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "door_detector"
+version = "0.1.0"
+description = "A tool to detect and measure doors in floor plan PDFs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "pdf2image>=1.16.0",
+    "opencv-python>=4.5.0",
+    "pytesseract>=0.3.8",
+    "numpy>=1.19.0",
+    "pandas>=1.3.0",
+    "ultralytics>=8.0.0",
+]
+
+[tool.setuptools]
+packages = ["door_detector"]
+
+[project.scripts]
+door-detector = "door_detector.cli:main"
